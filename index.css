@@ -834,70 +834,37 @@ main {
  * skills 
  */
 
-/* Skills Section */
-.skills-title {
-  margin-bottom: 20px; /* Adds spacing below the title */
-  text-align: center; /* Optional: Center the title */
-}
+.skills-title { margin-bottom: 20px; }
 
-.skills-container {
-  display: flex; /* Enables two columns using Flexbox */
-  justify-content: space-between; /* Space between columns */
-  gap: 20px; /* Adjust spacing between the columns */
-  flex-wrap: wrap; /* Allows wrapping for smaller screens */
-}
+.skills-list { padding: 20px; }
 
-.skills-column {
-  flex: 1; /* Each column takes equal space */
-  max-width: 48%; /* Ensures columns don’t stretch too much */
-}
 
-.skills-list {
-  padding: 0; /* Remove extra padding for better alignment */
-  margin: 0; /* Remove default margin */
-}
-
-.skills-item {
-  list-style: none; /* Removes bullet points */
-  margin-bottom: 15px; /* Adds spacing between items */
-}
+.skills-item:not(:last-child) { margin-bottom: 15px; }
 
 .skill .title-wrapper {
-  display: flex; /* Aligns skill title and percentage horizontally */
-  align-items: center; /* Centers items vertically */
-  gap: 5px; /* Space between title and percentage */
-  margin-bottom: 8px; /* Space below the title */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
 }
 
 .skill .title-wrapper data {
-  color: var(--light-gray); /* Adjust text color */
-  font-size: var(--fs-7); /* Adjust text size */
-  font-weight: var(--fw-300); /* Adjust font weight */
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
 }
 
 .skill-progress-bg {
-  background: var(--jet); /* Background color for progress bar */
-  width: 100%; /* Progress bar fills the width */
-  height: 8px; /* Height of the progress bar */
-  border-radius: 10px; /* Rounds the corners */
+  background: var(--jet);
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
 }
 
 .skill-progress-fill {
-  background: var(--text-gradient-yellow); /* Progress bar fill color */
-  height: 100%; /* Fills the height */
-  border-radius: inherit; /* Matches parent's border radius */
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .skills-container {
-    flex-direction: column; /* Stacks columns vertically */
-    gap: 10px; /* Reduce gap for smaller screens */
-  }
-
-  .skills-column {
-    max-width: 100%; /* Columns take full width */
-  }
+  background: var(--text-gradient-yellow);
+  height: 100%;
+  border-radius: inherit;
 }
 
 
