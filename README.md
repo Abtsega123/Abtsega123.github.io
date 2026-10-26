@@ -6,7 +6,7 @@ A redesigned, mobile-responsive, interactive technical portfolio **and source bu
 
 | Component | Scope | Status |
 |---|---|---|
-| Portfolio website | Editorial hero, case studies, technical lab, research context, professional history, resume | Locally built; not yet deployed |
+| Portfolio website | Editorial hero, case studies, technical lab, research context, professional history, resume | Published to GitHub Pages from `main` |
 | IaC Guard | Terraform HCL resource scanner, 6 explainable security rules, JSON/SARIF export | Runnable Python CLI + unit tests |
 | Agent Policy Lab | Cross-tenant policy gateway, tool allowlist, role and schema checks, tamper-detectable decision log | Runnable Python CLI + adversarial unit tests |
 | Cloud Detection Lab | CloudTrail-style event parsing, failure-burst correlation, risky API changes | Runnable Python CLI + unit tests |
@@ -34,7 +34,7 @@ python -m unittest discover -s projects/secure-ticket-api/tests -v
 
 ## Publish to your existing GitHub Pages repository
 
-This project has been prepared for publication in `Abtsega123/Abtsega123.github.io`. The included files are suitable for the repository root and GitHub Pages, with a printable CV at `resume.html`.
+The working site and source are published in `Abtsega123/Abtsega123.github.io`. GitHub Pages serves the static portfolio from `main`, with the recruiter-facing PDF at `assets/Abtsega_Tesfaye_CV.pdf` and a printable HTML version at `resume.html`.
 
 **Recommended safe path**: clone your existing site, create a feature branch, and copy this package into that clone. Keep your legacy assets and history in the repository so rollback is possible.
 
@@ -57,7 +57,7 @@ For GitHub Pages user sites, visit **Settings → Pages**, and verify that Pages
 
 The previous GitHub Pages repository was based on `codewithsadee/vcard-personal-portfolio` and retained generic template text and placeholder testimonials. This replaces those claims with experience documented in supplied career materials. Current 2026 research numbers are identified explicitly as research results and are **not** benchmark claims for the new scanner or demos. No customer endorsements, enterprise ownership, paid deployments or new credentials have been invented.
 
-Review all personal details, employer wording, research/paper status, and certification claims with your source records before publication. A printable browser CV is published as `resume.html`, with source DOCX/PDF available in the packaged download. It describes the newly implemented local prototypes, and provides code-level evidence for the technical claims. Review certification/experience wording and publish the code before circulating this revised CV widely.
+Review all personal details, employer wording, research/paper status, and certification claims with your source records before publication. A printable browser CV is published as `resume.html`, with source DOCX/PDF available in the packaged download. It describes the newly implemented local prototypes, and provides code-level evidence for the technical claims. Review certification and experience wording before circulating the CV widely.
 
 ## Engineering limitations
 
