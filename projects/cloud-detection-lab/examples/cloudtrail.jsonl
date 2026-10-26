@@ -1,0 +1,6 @@
+{"eventTime":"2026-10-20T12:01:00Z","eventName":"ConsoleLogin","sourceIPAddress":"198.51.100.12","userIdentity":{"arn":"arn:aws:iam::111111111111:user/demo"},"responseElements":{"ConsoleLogin":"Failure"}}
+{"eventTime":"2026-10-20T12:03:00Z","eventName":"ConsoleLogin","sourceIPAddress":"198.51.100.12","userIdentity":{"arn":"arn:aws:iam::111111111111:user/demo"},"responseElements":{"ConsoleLogin":"Failure"}}
+{"eventTime":"2026-10-20T12:05:00Z","eventName":"ConsoleLogin","sourceIPAddress":"198.51.100.12","userIdentity":{"arn":"arn:aws:iam::111111111111:user/demo"},"responseElements":{"ConsoleLogin":"Failure"}}
+{"eventTime":"2026-10-20T12:07:00Z","eventName":"AuthorizeSecurityGroupIngress","sourceIPAddress":"203.0.113.30","userIdentity":{"arn":"arn:aws:sts::111111111111:assumed-role/dev/demo"},"requestParameters":{"fromPort":22,"toPort":22,"cidrIp":"0.0.0.0/0"}}
+{"eventTime":"2026-10-20T12:09:00Z","eventName":"AttachRolePolicy","sourceIPAddress":"203.0.113.30","userIdentity":{"arn":"arn:aws:iam::111111111111:user/admin"},"requestParameters":{"policyArn":"arn:aws:iam::aws:policy/AdministratorAccess"}}
+{"eventTime":"2026-10-20T12:10:00Z","eventName":"DescribeInstances","sourceIPAddress":"203.0.113.30","userIdentity":{"arn":"arn:aws:iam::111111111111:user/admin"}}
