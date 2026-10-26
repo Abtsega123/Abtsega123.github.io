@@ -1,0 +1,43 @@
+name: Expand portfolio source bundle
+on:
+  push:
+    branches: [eca-security-portfolio-2026]
+    paths:
+      - ".portfolio-bundle.b64"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extract source bundle
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const zlib = require('node:zlib');
+          const binary = zlib.brotliDecompressSync(Buffer.from(fs.readFileSync('.portfolio-bundle.b64','utf8').trim(),'base64'));
+          let i=0, count=0;
+          while(i<binary.length) {
+            const n=binary.readUInt16BE(i);i+=2;
+            const name=binary.subarray(i,i+n).toString('utf8');i+=n;
+            const len=binary.readUInt32BE(i);i+=4;
+            if(!name || path.isAbsolute(name) || name.split('/').includes('..')) throw new Error('Unsafe filename '+name);
+            const target=path.join('.',name);
+            fs.mkdirSync(path.dirname(target),{recursive:true});
+            fs.writeFileSync(target,binary.subarray(i,i+len));
+            i+=len;count++;
+          }
+          console.log('Extracted '+count+' source files');
+          NODE
+      - name: Commit expanded source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Unpack tested engineering portfolio and labs"
+          git push
